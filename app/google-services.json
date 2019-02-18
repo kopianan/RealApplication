@@ -1,0 +1,104 @@
+{
+  "project_info": {
+    "project_number": "966496670737",
+    "firebase_url": "https://fir-androidstudio-60ba5.firebaseio.com",
+    "project_id": "fir-androidstudio-60ba5",
+    "storage_bucket": "fir-androidstudio-60ba5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:966496670737:android:9088bec6f69a1de8",
+        "android_client_info": {
+          "package_name": "com.example.firebasetutorial"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "966496670737-cem0t641dgnnvmf4310bkmv9t1sj1m3f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBr7Bh62qbS3qH1oYjAL_9mdcFoHhPXqCw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:966496670737:android:657ab0d9ba888b2a",
+        "android_client_info": {
+          "package_name": "com.example.realapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "966496670737-cem0t641dgnnvmf4310bkmv9t1sj1m3f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBr7Bh62qbS3qH1oYjAL_9mdcFoHhPXqCw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:966496670737:android:cea91e015ef88d98",
+        "android_client_info": {
+          "package_name": "com.example.roomdatabase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "966496670737-cem0t641dgnnvmf4310bkmv9t1sj1m3f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBr7Bh62qbS3qH1oYjAL_9mdcFoHhPXqCw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
