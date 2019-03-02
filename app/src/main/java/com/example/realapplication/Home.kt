@@ -5,6 +5,10 @@ import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 import kotlinx.android.synthetic.main.activity_home.*
 
 class Home : AppCompatActivity() {
@@ -14,24 +18,6 @@ class Home : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
-        checkUserLogin()
-        initView()
-
-
-    }
-
-    private fun initView() {
-        btn_home_sign_out.setOnClickListener {
-            firebase.signOut()
-            MainActivity.launcIntentClearTask(this)
-        }
-    }
-
-    private fun  checkUserLogin(){
-        if(firebase.currentUser == null) {
-            //sedang tidak login
-            MainActivity.launcIntentClearTask(this)
-        }
     }
 
     companion object {

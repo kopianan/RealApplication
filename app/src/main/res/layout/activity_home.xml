@@ -16,12 +16,6 @@
                 android:layout_height="wrap_content"
                 android:text="Selamat datang"
                 android:textSize="100sp"/>
-
-        <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="sign out"
-                android:id="@+id/btn_home_sign_out"/>
     </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>
