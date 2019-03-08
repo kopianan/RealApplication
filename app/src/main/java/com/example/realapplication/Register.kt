@@ -106,6 +106,7 @@ class Register : AppCompatActivity() {
 
         db.setValue(
             User(
+                uid.toString(),
                 txt_nama.text.toString(),
                 photoUrl,
                 txt_email.text.toString()))

@@ -9,7 +9,7 @@
 
     <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="131dp"
+            android:layout_height="wrap_content"
             android:layout_margin="30dp"
             android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -35,6 +35,11 @@
                 android:layout_height="wrap_content"
                 android:text="LoginUser"
                 android:id="@+id/btn_login_login_user"/>
+        <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Register User"
+                android:id="@+id/btn_login_register_user"/>
 
 
     </LinearLayout>

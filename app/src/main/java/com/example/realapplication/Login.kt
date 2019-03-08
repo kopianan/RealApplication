@@ -26,6 +26,10 @@ class Login : AppCompatActivity() {
             loginToFirebase()
 
         }
+
+        btn_login_register_user.setOnClickListener {
+            Register.launchIntent(this)
+        }
     }
 
     private fun loginToFirebase() {
@@ -50,6 +54,12 @@ class Login : AppCompatActivity() {
 
         fun launchIntent(context: Context){
             val intent = Intent(context, Login::class.java)
+            context.startActivity(intent)
+        }
+
+        fun launchIntentClearTask(context: Context){
+            val intent = Intent(context, Login::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK.or(Intent.FLAG_ACTIVITY_CLEAR_TASK)
             context.startActivity(intent)
         }
     }

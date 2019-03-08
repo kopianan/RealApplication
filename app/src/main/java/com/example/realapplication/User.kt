@@ -1,16 +1,16 @@
 package com.example.realapplication
 
-class User {
+import android.os.Parcelable
+import kotlinx.android.parcel.Parcelize
 
-    var name  = ""
-    var photo =""
-    var email = ""
+@Parcelize
+class User(
+    val uid :String,
+    val name :String,
+           val photo :String,
+           val email :String):Parcelable  {
 
-    constructor(name: String, photo: String, email: String) {
-        this.name = name
-        this.photo = photo
-        this.email = email
-    }
+    constructor():this("","","","")
 
 
 }

@@ -11,11 +11,19 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
+        <activity android:name=".ChatRoomActivity"
+                  android:theme="@style/WithActionBar">
+
+        </activity>
+        <activity android:name=".FriendListActivity">
+        </activity>
         <activity android:name=".Register">
         </activity>
         <activity android:name=".Login">
         </activity>
-        <activity android:name=".Home">
+        <activity
+                android:name=".Home"
+                android:theme="@style/WithActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
