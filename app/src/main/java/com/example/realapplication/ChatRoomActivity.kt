@@ -38,7 +38,10 @@ class ChatRoomActivity : AppCompatActivity() {
 
     private fun loadMessageFromFirebase() {
 
-        val reference = FirebaseDatabase.getInstance().getReference("/message")
+        val MyId = Login.currentUserData.uid
+        val FriendId = friend.uid
+
+        val reference = FirebaseDatabase.getInstance().getReference("/message-user/$MyId/$FriendId")
 
         reference.addChildEventListener(object : ChildEventListener {
             override fun onCancelled(p0: DatabaseError) {
@@ -93,11 +96,13 @@ class ChatRoomActivity : AppCompatActivity() {
 
         //disini pesan akan diolah untuk di kirim ke firebase
 
-
-        val messageDbReference = FirebaseDatabase.getInstance().getReference("/message").push()
-        val id = messageDbReference.key.toString()
+        //kirim pesan ke user yang akan dikirimkan pesan
         val fromId = FirebaseAuth.getInstance().uid.toString()
         val toId = friend.uid
+
+        val messageDbReference = FirebaseDatabase.getInstance().getReference("/message-user/$fromId/$toId").push()
+        val messageDbReferenceTo = FirebaseDatabase.getInstance().getReference("/message-user/$toId/$fromId").push()
+        val id = messageDbReference.key.toString()
         val text = et_chat_room_chat_message.text.toString()
         val time = System.currentTimeMillis() / 1000
 
@@ -107,7 +112,13 @@ class ChatRoomActivity : AppCompatActivity() {
             .addOnSuccessListener {
                 Toast.makeText(applicationContext, "berhasil dikirim ke database", Toast.LENGTH_LONG).show()
                 et_chat_room_chat_message.setText("")
+
+                messageDbReferenceTo.setValue(
+                    Message(id, fromId, toId, text, time)
+                )
             }
+
+
 
     }
 

@@ -47,18 +47,6 @@ class Login : AppCompatActivity() {
                    Home.launcIntentClearTask(this)
                    //setelah login berhasil dan masuk ke halaman HOME
                    //kita ambil data user nya
-                   val uid = FirebaseAuth.getInstance().uid
-                   val ref = FirebaseDatabase.getInstance().getReference("/user/$uid")
-                   ref.addValueEventListener(object : ValueEventListener{
-                       override fun onCancelled(p0: DatabaseError) {
-
-                       }
-
-                       override fun onDataChange(p0: DataSnapshot) {
-                           currentUserData = p0.getValue(User::class.java)!!
-                       }
-                   })
-
                }else {
 
                }

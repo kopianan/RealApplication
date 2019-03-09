@@ -4,7 +4,6 @@ import com.squareup.picasso.Picasso
 import com.xwray.groupie.Item
 import com.xwray.groupie.ViewHolder
 import kotlinx.android.synthetic.main.item_chat_untuk.view.*
-import kotlinx.android.synthetic.main.item_friend.view.*
 
 class AdapterPesanUntuk(val text :String, val currUser:User) : Item<ViewHolder>() {
     override fun getLayout(): Int {
