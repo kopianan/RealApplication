@@ -6,6 +6,10 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 import kotlinx.android.synthetic.main.activity_login.*
 
 class Login : AppCompatActivity() {
@@ -41,6 +45,20 @@ class Login : AppCompatActivity() {
                if(it.isSuccessful){
                    Toast.makeText(this,"Berhasil Login", Toast.LENGTH_LONG).show()
                    Home.launcIntentClearTask(this)
+                   //setelah login berhasil dan masuk ke halaman HOME
+                   //kita ambil data user nya
+                   val uid = FirebaseAuth.getInstance().uid
+                   val ref = FirebaseDatabase.getInstance().getReference("/user/$uid")
+                   ref.addValueEventListener(object : ValueEventListener{
+                       override fun onCancelled(p0: DatabaseError) {
+
+                       }
+
+                       override fun onDataChange(p0: DataSnapshot) {
+                           currentUserData = p0.getValue(User::class.java)!!
+                       }
+                   })
+
                }else {
 
                }
@@ -51,6 +69,9 @@ class Login : AppCompatActivity() {
     }
 
     companion object {
+
+        lateinit var currentUserData :User
+
 
         fun launchIntent(context: Context){
             val intent = Intent(context, Login::class.java)

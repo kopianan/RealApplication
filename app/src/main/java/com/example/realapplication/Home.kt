@@ -22,27 +22,9 @@ class Home : AppCompatActivity() {
         setContentView(R.layout.activity_home)
 
         checkUserAccountSignIn()
-        fetchUserData()
 
     }
 
-    private fun fetchUserData() {
-        val uid = FirebaseAuth.getInstance().uid
-        val ref = FirebaseDatabase.getInstance().getReference("user/$uid")
-
-        ref.addValueEventListener(object : ValueEventListener{
-            override fun onCancelled(p0: DatabaseError) {
-
-            }
-
-            override fun onDataChange(p0: DataSnapshot) {
-                currentUser  = p0.getValue(User::class.java)
-
-            }
-
-        })
-
-    }
 
     private fun checkUserAccountSignIn() {
         if(FirebaseAuth.getInstance().uid.isNullOrEmpty()){
@@ -78,9 +60,6 @@ class Home : AppCompatActivity() {
 
 
     companion object {
-
-
-        var currentUser : User? = null
 
          fun launchIntent(context : Context){
             val intent = Intent(context, Home::class.java)

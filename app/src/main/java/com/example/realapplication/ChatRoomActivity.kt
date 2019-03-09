@@ -60,11 +60,11 @@ class ChatRoomActivity : AppCompatActivity() {
                 if (messageCollection != null) {
 
                     if (messageCollection.fromId == FirebaseAuth.getInstance().uid) {
-                        val userData = Home.currentUser
-                        adapter.add(AdapterPesanUntuk(messageCollection.text, userData))
+                        adapter.add(AdapterPesanUntuk(messageCollection.text, Login.currentUserData))
+                        //disini kita tambahkan foto pengirim
                     }else{
-
                         adapter.add(AdapterPesanDari(messageCollection.text, friend))
+                            //tambahkan foto teman chat
                     }
 
 
